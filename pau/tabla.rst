@@ -1,6 +1,6 @@
 .. list-table:: Exámenes PAU
    :header-rows: 1
-   :widths: 20 10 70
+   :widths: 15 15 80
    :align: center
 
    * - Comunidad
