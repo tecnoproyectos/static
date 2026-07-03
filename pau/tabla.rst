@@ -1,12 +1,11 @@
 .. list-table:: Exámenes PAU
    :header-rows: 1
-   :widths: auto
+   :widths: 20 10 70
    :align: center
 
    * - Comunidad
      - Curso
-     - Materia
-     - Examen
+     - Materia - Examen
    * - Madrid
      - 2025-26
      - `Tecnología e Ingeniería II - Modelo

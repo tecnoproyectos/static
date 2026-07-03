@@ -42,13 +42,12 @@ tipo_examenes = [
 
 table_header = '''.. list-table:: Exámenes PAU
    :header-rows: 1
-   :widths: auto
+   :widths: 20 10 70
    :align: center
 
    * - Comunidad
      - Curso
-     - Materia
-     - Examen
+     - Materia - Examen
 '''
 
 
