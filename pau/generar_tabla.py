@@ -28,7 +28,7 @@ comunidades = [
 
 
 materias = [
-    ['tecnologia-ingenieria-ii', 'Tecnología e Ingeniería II'],
+    ['tein', 'Tecnología e Ingeniería II'],
     ]
 
 
@@ -43,7 +43,7 @@ tipo_examenes = [
 table_header = '''.. list-table:: Exámenes PAU
    :header-rows: 1
    :widths: 15 15 80
-   :align: center
+   :align: left
 
    * - Comunidad
      - Curso
@@ -56,8 +56,9 @@ def main():
     file_names = read_file_names()
     for file_name in file_names:
         comunidad = rename_comunidad(file_name.split('-')[1])
-        curso = '20' + '-'.join(file_name.split('-')[2:4])
-        materia = read_materia(file_name)
+        materia = read_materia(file_name.split('-')[2])
+        curso = file_name.split('-')[3]
+        curso = f'20{curso[:2]}-{curso[2:]}'
         examen = read_tipo_examen(file_name)
         table.append(f'   * - { comunidad }\n' +
            f'     - { curso }\n' +
