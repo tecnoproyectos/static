@@ -78,7 +78,7 @@ def render_table(database):
 
 
 def database_sort(database, fields):
-    for field in fields:
+    for field in reversed(fields):
         database.sort(key=itemgetter(field[0]), reverse=field[1])
     return database
 
