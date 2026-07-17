@@ -24,7 +24,8 @@ def main():
 def normalizar_nombre(nombre):
     nombre = nombre.lower()
     # Sustituir ñ y Ñ antes de eliminar acentos
-    nombre = nombre.replace("ñ", "ni").replace("Ñ", "ni")
+    nombre = nombre.replace("ñ", "ni")
+    nombre = nombre.replace("ü", "u")
 
     # Eliminar tildes
     nombre = unicodedata.normalize("NFD", nombre)
@@ -48,8 +49,17 @@ def renombrar(nombre):
             nombre =  comunidad + '-' + re.sub(comunidad, '', nombre)
     if not re.search('pau', nombre):
         nombre = 'pau-' + nombre
+    nombre = nombre.replace("2024", "-2324-")
+    nombre = nombre.replace("2025", "-2425-")
+    nombre = nombre.replace("2026", "-2526-")
+    nombre = nombre.replace("2027", "-2627-")
+    nombre = nombre.replace("2028", "-2728-")
+    nombre = nombre.replace("2029", "-2829-")
+    nombre = nombre.replace("2030", "-2930-")
+    nombre = nombre.replace("junio", "-ordinaria-")
+    nombre = nombre.replace("julio", "-extra-")
     nombre = re.sub('\\-+', '-', nombre)
-    nombre = re.sub('\\-+\\.', '.', nombre)
+    nombre = nombre.replace("-.", ".")
     return nombre
 
 
