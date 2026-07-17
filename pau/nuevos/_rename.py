@@ -32,7 +32,7 @@ def normalizar_nombre(nombre):
     nombre = unicodedata.normalize("NFC", nombre)
 
     # Eliminar espacios
-    nombre = re.sub('[_ \t]+', '-', nombre)
+    nombre = re.sub('[_ \\t]+', '-', nombre)
 
     # Minúsculas
     nombre = nombre.lower()
@@ -48,7 +48,9 @@ def renombrar(nombre):
             nombre =  comunidad + '-' + re.sub(comunidad, '', nombre)
     if not re.search('pau', nombre):
         nombre = 'pau-' + nombre
-    return re.sub('-+', '-', nombre)
+    nombre = re.sub('\\-+', '-', nombre)
+    nombre = re.sub('\\-+\\.', '.', nombre)
+    return nombre
 
 
 def renombrar_archivos(directorio):
